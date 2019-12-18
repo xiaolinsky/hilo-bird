@@ -94,8 +94,9 @@ export default class Bird extends Sprite {
      * 2.小鸟碰到地板
      */
     if (y < 30 || y > this.groundY) {
-      this.y = this.groundY
+      // this.tween = Tween.to(this, { rotation: 90 }, { duration: this.groundY - y })
       this.isDead = true
+      this.y = this.groundY
       return
     }
 
