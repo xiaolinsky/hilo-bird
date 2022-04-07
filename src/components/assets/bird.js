@@ -18,11 +18,11 @@ export default class Bird extends Sprite {
     this.pivotY = 30
 
     this.startX = props.startX || 0 //小鸟的起始x坐标
-    this.startY = props.startY || 0//小鸟的起始y坐标
+    this.startY = props.startY || 0 //小鸟的起始y坐标
     this.x = props.startX || 0 //小鸟的当前x坐标
-    this.y = props.startY || 0//小鸟的当前y坐标
+    this.y = props.startY || 0 //小鸟的当前y坐标
     this.groundY = props.groundY || 0 //地面的坐标
-    this.gravity = 10 / 1000 * 0.3 //重力加速度
+    this.gravity = (10 / 1000) * 0.3 //重力加速度
     this.flyHeight = 80 //小鸟每次往上飞的高度
     this.initVelocity = Math.sqrt(2 * this.flyHeight * this.gravity) //小鸟往上飞的初速度
 

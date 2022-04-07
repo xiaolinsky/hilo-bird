@@ -29,7 +29,7 @@ export default {
       scale: 0.5,
       stage: null,
       ticker: null,
-      state: 'ready',// 游戏状态:1.ready(准备就绪);2.playing(游戏中);3.over(游戏结束)
+      state: 'ready', // 游戏状态:1.ready(准备就绪);2.playing(游戏中);3.over(游戏结束)
       gameReadyScene: null,
       gameOverScene: null,
       currentScore: null,
@@ -57,7 +57,6 @@ export default {
         this.initStage(containerWidth, containerHeight, scale)
         const { stage } = this
         document.body.appendChild(stage.canvas)
-
 
         /**
          * 初始化：
@@ -225,11 +224,10 @@ export default {
 
       //绑定开始按钮事件
       const startBtn = gameOverScene.getChildById('start')
-      startBtn.on(event.POINTER_START, (e) => {
-          e.stopImmediatePropagation && e.stopImmediatePropagation()
-          this.gameReady()
-        }
-      )
+      startBtn.on(event.POINTER_START, e => {
+        e.stopImmediatePropagation && e.stopImmediatePropagation()
+        this.gameReady()
+      })
       this.gameOverScene = gameOverScene
     },
     /**
@@ -238,7 +236,7 @@ export default {
     initTouchEvent() {
       const { stage } = this
       stage.enableDOMEvent(event.POINTER_START, true)
-      stage.on(event.POINTER_START, (e) => {
+      stage.on(event.POINTER_START, e => {
         this.onUserInput(e)
       })
     },

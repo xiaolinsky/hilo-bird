@@ -69,15 +69,15 @@ export default class GameOverScene extends Container {
       background: '#fff'
     })
 
-    board.x = this.width - board.width >> 1
-    board.y = this.height - board.height >> 1
-    gameOver.x = this.width - gameOver.width >> 1
+    board.x = (this.width - board.width) >> 1
+    board.y = (this.height - board.height) >> 1
+    gameOver.x = (this.width - gameOver.width) >> 1
     gameOver.y = board.y - gameOver.height - 20
     startBtn.x = board.x - 5
-    startBtn.y = board.y + board.height + 20 >> 0
-    rankBtn.x = startBtn.x + startBtn.width + 20 >> 0
+    startBtn.y = (board.y + board.height + 20) >> 0
+    rankBtn.x = (startBtn.x + startBtn.width + 20) >> 0
     rankBtn.y = startBtn.y
-    scoreLabel.x = board.x + board.width - 140 >> 0
+    scoreLabel.x = (board.x + board.width - 140) >> 0
     scoreLabel.y = board.y + 90
     bestLabel.x = scoreLabel.x
     bestLabel.y = scoreLabel.y + 105
@@ -92,18 +92,30 @@ export default class GameOverScene extends Container {
     this.getChildById('mask').alpha = 1
 
     Tween.to(this.getChildById('gameOver'), { alpha: 1 }, { duration: 100 })
-    Tween.to(this.getChildById('board'), { alpha: 1, y: this.getChildById('board').y - 150 }, {
-      duration: 200,
-      delay: 200
-    })
-    Tween.to(this.getChildById('score'), { alpha: 1, y: this.getChildById('score').y - 150 }, {
-      duration: 200,
-      delay: 200
-    })
-    Tween.to(this.getChildById('best'), { alpha: 1, y: this.getChildById('best').y - 150 }, {
-      duration: 200,
-      delay: 200
-    })
+    Tween.to(
+      this.getChildById('board'),
+      { alpha: 1, y: this.getChildById('board').y - 150 },
+      {
+        duration: 200,
+        delay: 200
+      }
+    )
+    Tween.to(
+      this.getChildById('score'),
+      { alpha: 1, y: this.getChildById('score').y - 150 },
+      {
+        duration: 200,
+        delay: 200
+      }
+    )
+    Tween.to(
+      this.getChildById('best'),
+      { alpha: 1, y: this.getChildById('best').y - 150 },
+      {
+        duration: 200,
+        delay: 200
+      }
+    )
     Tween.to(this.getChildById('start'), { alpha: 1 }, { duration: 100, delay: 600 })
     Tween.to(this.getChildById('rank'), { alpha: 1 }, { duration: 100, delay: 600 })
     Tween.to(this.getChildById('mask'), { alpha: 0 }, { duration: 400 })

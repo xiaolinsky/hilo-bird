@@ -78,7 +78,7 @@ export default class Pipeline extends Container {
     //下面障碍在y轴的最下的位置
     const downMaxY = this.groundY - 180
     //在downMinY和downMaxY之间随机位置
-    down.y = downMinY + (downMaxY - downMinY) * Math.random() >> 0
+    down.y = (downMinY + (downMaxY - downMinY) * Math.random()) >> 0
     down.x = this.hoseWidth * index
 
     up.y = down.y - this.hoseSpacingY - up.height
@@ -100,7 +100,7 @@ export default class Pipeline extends Container {
     //重新确定队列中所有管子的x轴坐标
     for (let i = 0; i < total - this.numOffscreenHoses * 2; i++) {
       const hose = this.getChildAt(i)
-      hose.x = this.hoseWidth * (i * 0.5 >> 0)
+      hose.x = this.hoseWidth * ((i * 0.5) >> 0)
     }
 
     //重新确定障碍的x轴坐标
@@ -143,7 +143,7 @@ export default class Pipeline extends Container {
 
     x = -this.x + x
     if (x > 0) {
-      const num = x / this.hoseWidth + 0.5 >> 0
+      const num = (x / this.hoseWidth + 0.5) >> 0
       count += num
     }
     count += this.passThrough
