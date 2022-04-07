@@ -1,7 +1,12 @@
 {
-  "endOfLine": "lf",
-  "semi": true,
+  "eslintIntegration": true,
   "singleQuote": true,
+  "semi": false,
+  "printWidth": 160,
+  "proseWrap": "always",
   "tabWidth": 2,
-  "trailingComma": "es5"
+  "useTabs": false,
+  "endOfLine": "auto",
+  "trailingComma": "none",
+  "bracketSpacing": true
 }
